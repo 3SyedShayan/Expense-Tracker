@@ -5,12 +5,13 @@ import 'package:uuid/uuid.dart';
 
 var formatter = DateFormat('yyyy-MM-dd');
 
-enum Category { Luxury, Food, Other }
+enum Category { Leisure, Food, Travel, Work }
 
 const categoryIcons = {
-  Category.Luxury: Icons.star,
+  Category.Leisure: Icons.star,
   Category.Food: Icons.fastfood,
-  Category.Other: Icons.category,
+  Category.Travel: Icons.category,
+  Category.Work: Icons.work,
 };
 
 class Expense {
@@ -25,7 +26,28 @@ class Expense {
   final double amount;
   final DateTime date;
   final Category category;
-  String formattedDate () {
+  String formattedDate() {
     return formatter.format(date);
+  }
+}
+
+class ExpenseBucket {
+  ExpenseBucket({required this.category, required this.expenses});
+  ExpenseBucket.forCategory(
+      {required List<Expense> allexpenses, required this.category})
+      : expenses = allexpenses
+            .where((expense) => expense.category == category)
+            .toList();
+  final Category category;
+  final List<Expense> expenses;
+
+
+  double get totalExpenses {
+    double sum = 0;
+
+    for (final expense in expenses) {
+      sum += expense.amount;
+    }
+    return sum;
   }
 }

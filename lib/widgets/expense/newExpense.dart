@@ -51,7 +51,7 @@ class _NewExpenseState extends State<NewExpense> {
                 Navigator.of(ctx).pop();
               },
               child: Text('Okay'),
-            )
+            ),
           ],
         ),
       );

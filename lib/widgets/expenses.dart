@@ -1,4 +1,6 @@
 import 'package:expense_tracker/models/expense.dart';
+import 'package:expense_tracker/widgets/charts/chart.dart';
+import 'package:expense_tracker/widgets/charts/chart2.dart';
 import 'package:expense_tracker/widgets/expense/newExpense.dart';
 import 'package:expense_tracker/widgets/expenses_list.dart';
 import 'package:flutter/material.dart';
@@ -15,14 +17,18 @@ final List<Expense> _registeredExpenses = [
       title: 'Shoes',
       amount: 100,
       date: DateTime.now(),
-      category: Category.Luxury),
+      category: Category.Leisure),
   Expense(
-      title:'Food', amount: 50, date: DateTime.now(), category: Category.Food),
+    title: 'Food',
+    amount: 50,
+    date: DateTime.now(),
+    category: Category.Food,
+  ),
   Expense(
       title: 'Other',
       amount: 20,
       date: DateTime.now(),
-      category: Category.Other),
+      category: Category.Work),
 ];
 
 class _ExpensesState extends State<Expenses> {
@@ -85,7 +91,9 @@ class _ExpensesState extends State<Expenses> {
       ),
       body: Column(
         children: [
-          Text('Expenses'),
+          Chart2(
+            allExpenses: _registeredExpenses,
+          ),
           Expanded(child: contentUpdate),
         ],
       ),
