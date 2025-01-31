@@ -1,5 +1,5 @@
 import 'package:expense_tracker/models/expense.dart';
-import 'package:expense_tracker/widgets/charts/chart_bar2.dart';
+import 'package:expense_tracker/widgets/charts/chart_bar.dart';
 import 'package:flutter/material.dart';
 
 class Chart2 extends StatelessWidget {

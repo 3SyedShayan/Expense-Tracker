@@ -38,6 +38,8 @@ macos/
 test/
 web/
 windows/
+lib/widgets/chart_bar3.dart
+lib/widgets/chart3.dart
 
 # Symbolication related
 app.*.symbols
