@@ -32,28 +32,28 @@ class ChartModel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          margin: const EdgeInsets.all(16),
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(
-            vertical: 16,
-            horizontal: 8,
-          ),
-          height: 180,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            gradient: LinearGradient(
-              colors: [
-                Theme.of(context).colorScheme.primary.withOpacity(0.3),
-                Theme.of(context).colorScheme.primary.withOpacity(0.0)
-              ],
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
-            ),
-          ),
-          child: Expanded(
+    return Container(
+      margin: const EdgeInsets.all(16),
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(
+        vertical: 16,
+        horizontal: 8,
+      ),
+      height: 180,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        gradient: LinearGradient(
+          colors: [
+            Theme.of(context).colorScheme.primary.withOpacity(0.3),
+            Theme.of(context).colorScheme.primary.withOpacity(0.0)
+          ],
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+        ),
+      ),
+      child: Column(
+        children: [
+          Expanded(
             child: Row(
               spacing: 10,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -67,22 +67,21 @@ class ChartModel extends StatelessWidget {
               ],
             ),
           ),
-        ),
-        // Row(
-        //     children: bucketList
-        //         .map((e) => Icon(categoryIcons[e.category]))
-        //         .toList(),
-        Row(
-          children: bucketList
-              .map((e) => Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 4),
-                      child: Icon(categoryIcons[e.category]),
-                    ),
-                  ))
-              .toList(),
-        )
-      ],
+          SizedBox(
+            height: 12,
+          ),
+          Row(
+            children: bucketList
+                .map((e) => Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        child: Icon(categoryIcons[e.category]),
+                      ),
+                    ))
+                .toList(),
+          )
+        ],
+      ),
     );
   }
 }

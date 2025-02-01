@@ -13,21 +13,26 @@ class Expenses extends StatefulWidget {
 
 final List<Expense> _registeredExpenses = [
   Expense(
-      title: 'Shoes',
+      title: 'Buy Shoes',
       amount: 100,
-      date: DateTime.now(),
+      date: DateTime(2025, 2, 3),
       category: Category.Leisure),
   Expense(
-    title: 'Food',
+    title: 'Order Pizza',
     amount: 50,
     date: DateTime.now(),
     category: Category.Food,
   ),
   Expense(
-      title: 'Other',
-      amount: 20,
-      date: DateTime.now(),
+      title: 'Fix Laptop',
+      amount: 130,
+      date: DateTime(2025, 3, 4),
       category: Category.Work),
+  Expense(
+      title: 'Home Tickets',
+      amount: 70,
+      date: DateTime(2025, 2, 4),
+      category: Category.Travel),
 ];
 
 class _ExpensesState extends State<Expenses> {

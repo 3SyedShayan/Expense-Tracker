@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 
-class ChartBar extends StatefulWidget {
+class ChartBar extends StatelessWidget {
   ChartBar({super.key, required this.fill});
 
   var fill = 0.0;
-  @override
-  State<ChartBar> createState() => _ChartBar2State();
-}
 
-class _ChartBar2State extends State<ChartBar> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: FractionallySizedBox(
         alignment: Alignment.bottomCenter,
-        heightFactor: widget.fill,
+        heightFactor: fill,
         child: DecoratedBox(
-          decoration: BoxDecoration(color: Colors.deepPurple),
+          decoration: BoxDecoration(
+              color: Colors.deepPurple,
+              borderRadius: BorderRadius.vertical(top: Radius.circular(8)),
+              shape: BoxShape.rectangle),
         ),
       ),
     );
